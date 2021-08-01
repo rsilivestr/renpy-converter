@@ -1,3 +1,4 @@
 export function convertToRenpyScript (json: any) : string {
-  return ''
+  if (json == null) return ''
+  return 'ddd'
 }

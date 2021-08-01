@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col">
         <h3>json</h3>
-        <pre>{{ selected }}</pre>
+        <pre>{{ getJsonValue(selected) }}</pre>
       </div>
       <div class="col">
          <h3>rpy</h3>
@@ -30,7 +30,7 @@ export default defineComponent({
   name: 'Converter',
   data () {
     return {
-      selected: null,
+      selected: null as any,
       jsons: [
         {
           name: '1-plain-text-dialog-single-line',
@@ -39,9 +39,18 @@ export default defineComponent({
       ]
     }
   },
+  created () {
+    this.selected = this.jsons[0]
+  },
   computed: {
     converted () : string {
       return convertToRenpyScript(this.selected)
+    }
+  },
+  methods: {
+    getJsonValue (json: any) {
+      if (json == null) return ''
+      return json.jsonValue
     }
   }
 })
