@@ -21,10 +21,12 @@
   </div>
 </template>
 
-<script>
-import plainTextDialogSingleLine from '../../../dialogs-json/1-plain-text-dialog-single-line'
+<script lang="ts">
+import plainTextDialogSingleLine from '../../../dialogs-json/1-plain-text-dialog-single-line.json'
+import { convertToRenpyScript } from '../index'
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   name: 'Converter',
   data () {
     return {
@@ -38,17 +40,11 @@ export default {
     }
   },
   computed: {
-    converted () {
-      return this.selected
-    }
-  },
-  methods: {
-    some () {
-      const a = 3
-      return a
+    converted () : string {
+      return convertToRenpyScript(this.selected)
     }
   }
-}
+})
 </script>
 
 <style scoped>

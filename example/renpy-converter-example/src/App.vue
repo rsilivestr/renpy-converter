@@ -1,16 +1,17 @@
 <template>
-  <Converter/>
+  <Converter />
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import Converter from './components/Converter.vue'
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     Converter
   }
-}
+})
 </script>
 
 <style>

@@ -20,3 +20,7 @@ export function download () {
 }
 
 download()
+
+export function convertToRenpyScript (json: any) : string {
+  return ''
+}
