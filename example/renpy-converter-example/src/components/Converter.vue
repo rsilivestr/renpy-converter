@@ -44,7 +44,7 @@ export default defineComponent({
   },
   computed: {
     converted () : string {
-      return convertToRenpyScript(this.selected)
+      return convertToRenpyScript(this.getJsonValue(this.selected))
     }
   },
   methods: {
