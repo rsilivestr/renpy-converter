@@ -1,6 +1,6 @@
 
 import { IDialogDTO } from './dtos'
 
-export function convertToRenpyScript() : string{
-  return '';
+export function convertToRenpyScript(json: IDialogDTO) : string{
+  throw new Error('not implemented');
 }
